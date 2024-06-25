@@ -47,4 +47,18 @@ export class AuthService {
       return userCurrent;
     });
   }
+
+  // Completes the login process after the user has been redirected back to the application from the authorization server
+  completeLogin() {
+    return this._userManager.signinRedirectCallback().then(user => {
+      // Update the _user with the property with the returned User object
+      this._user = user;
+
+      // Publish a boolean value to the _loginChangedSubject observable
+      this._loginChangedSubject.next(!!user && !user.expired);
+
+      // Return the user object
+      return user;
+    });
+  }
 }
