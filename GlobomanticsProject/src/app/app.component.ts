@@ -28,4 +28,9 @@ export class AppComponent implements OnInit {
   login() {
     this._authService.login();
   }
+
+  // Calls logout() from AuthService
+  logout() {
+    this._authService.logout();
+  }
 }

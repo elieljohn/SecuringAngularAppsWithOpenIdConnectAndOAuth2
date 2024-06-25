@@ -61,4 +61,18 @@ export class AuthService {
       return user;
     });
   }
+
+  // Initiate the logout process
+  logout() {
+    this._userManager.signoutRedirect();
+  }
+
+  // Update the internal state of the AuthService to reflect the user's logout status
+  completeLogout() {
+    // Clear user's login state
+    this._user = null;
+
+    // Processes the response from the authentication provider's logout page and complete the logout process
+    return this._userManager.signoutRedirectCallback();
+  }
 }
