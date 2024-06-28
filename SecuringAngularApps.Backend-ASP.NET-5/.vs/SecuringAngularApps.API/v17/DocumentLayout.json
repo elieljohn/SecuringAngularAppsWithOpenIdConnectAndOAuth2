@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\EJ\\Angular\\SecuringAngularAppsWithOpenIdConnectAndOAuth2\\SecuringAngularApps.Backend-ASP.NET-5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91C03E41-9DE4-4952-936C-DB9D26155111}|SecuringAngularApps.API\\SecuringAngularApps.API.csproj|c:\\github\\ej\\angular\\securingangularappswithopenidconnectandoauth2\\securingangularapps.backend-asp.net-5\\securingangularapps.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91C03E41-9DE4-4952-936C-DB9D26155111}|SecuringAngularApps.API\\SecuringAngularApps.API.csproj|solutionrelative:securingangularapps.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91C03E41-9DE4-4952-936C-DB9D26155111}|SecuringAngularApps.API\\SecuringAngularApps.API.csproj|c:\\github\\ej\\angular\\securingangularappswithopenidconnectandoauth2\\securingangularapps.backend-asp.net-5\\securingangularapps.api\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91C03E41-9DE4-4952-936C-DB9D26155111}|SecuringAngularApps.API\\SecuringAngularApps.API.csproj|solutionrelative:securingangularapps.api\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\GitHub\\EJ\\Angular\\SecuringAngularAppsWithOpenIdConnectAndOAuth2\\SecuringAngularApps.Backend-ASP.NET-5\\SecuringAngularApps.API\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "SecuringAngularApps.API\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\GitHub\\EJ\\Angular\\SecuringAngularAppsWithOpenIdConnectAndOAuth2\\SecuringAngularApps.Backend-ASP.NET-5\\SecuringAngularApps.API\\Controllers\\ProjectsController.cs*",
+              "RelativeToolTip": "SecuringAngularApps.API\\Controllers\\ProjectsController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T08:37:27.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\GitHub\\EJ\\Angular\\SecuringAngularAppsWithOpenIdConnectAndOAuth2\\SecuringAngularApps.Backend-ASP.NET-5\\SecuringAngularApps.API\\Startup.cs",
+              "RelativeDocumentMoniker": "SecuringAngularApps.API\\Startup.cs",
+              "ToolTip": "C:\\GitHub\\EJ\\Angular\\SecuringAngularAppsWithOpenIdConnectAndOAuth2\\SecuringAngularApps.Backend-ASP.NET-5\\SecuringAngularApps.API\\Startup.cs*",
+              "RelativeToolTip": "SecuringAngularApps.API\\Startup.cs*",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAgwCYAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T08:31:18.405Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
