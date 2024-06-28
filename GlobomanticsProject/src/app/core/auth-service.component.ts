@@ -83,4 +83,16 @@ export class AuthService {
     // Processes the response from the authentication provider's logout page and complete the logout process
     return this._userManager.signoutRedirectCallback();
   }
+
+  // retrieve the access token for the currently authenticated user
+  getAccessToken() {
+    return this._userManager.getUser().then(user => {
+      if (!!user && !user.expired) {
+        return user.access_token;
+      }
+      else {
+        return null;
+      }
+    });
+  }
 }
