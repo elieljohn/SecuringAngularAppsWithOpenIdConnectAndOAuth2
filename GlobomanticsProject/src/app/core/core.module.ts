@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-service.interceptor';
+import { AuthService } from './auth-service.component';
 import { AccountService } from './account.service';
 import { ProjectService } from './project.service';
 
@@ -7,8 +10,10 @@ import { ProjectService } from './project.service';
     exports: [],
     declarations: [],
     providers: [
-    AccountService,
-    ProjectService
+        AuthService,
+        AccountService,
+        ProjectService,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
     ],
 })
 export class CoreModule { }
