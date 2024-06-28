@@ -16,7 +16,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     if (req.url.startsWith(Constants.apiRoot)) {
       return from(this._authService.getAccessToken().then(token => {
         const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-        const authReq = req.clone({ headers });
+        const authReq = req.clone({ headers }); // Modified request
         return next.handle(authReq).pipe(tap(_ => { }, error => {
           var respError = error as HttpErrorResponse;
           if (respError && (respError.status === 401 || respError.status === 403)) {
