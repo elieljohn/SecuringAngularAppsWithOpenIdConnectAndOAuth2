@@ -32,6 +32,10 @@ export class AuthService {
     };
     // Configure the UserManager using the settings in stsSettings
     this._userManager = new UserManager(stsSettings);
+    // Notify the rest of the application that the user is no longer logged in
+    this._userManager.events.addAccessTokenExpired(_ => {
+      this._loginChangedSubject.next(false);
+    });
   }
 
   // Trigger a redirect of the current window to the authorization endpoint
@@ -79,6 +83,9 @@ export class AuthService {
   completeLogout() {
     // Clear user's login state
     this._user = null;
+
+    // Notify subscribers that the user's login state has changed, and that they are now logged out 
+    this._loginChangedSubject.next(false);
 
     // Processes the response from the authentication provider's logout page and complete the logout process
     return this._userManager.signoutRedirectCallback();
