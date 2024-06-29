@@ -3,6 +3,8 @@ import { User, UserManager } from "oidc-client";
 import { Subject } from "rxjs";
 import { CoreModule } from "./core.module";
 import { Constants } from "../constants";
+import { HttpClient } from "@angular/common/http";
+import { AuthContext } from "../model/auth-context";
 
 
 @Injectable({ providedIn: CoreModule })
@@ -12,8 +14,9 @@ export class AuthService {
   private _loginChangedSubject = new Subject<boolean>();
 
   loginChanged = this._loginChangedSubject.asObservable();
+  authContext: AuthContext;
 
-  constructor() {
+  constructor(private _httpClient: HttpClient) {
     const stsSettings = {
       authority: Constants.stsAuthority,
       client_id: Constants.clientId,
@@ -37,6 +40,12 @@ export class AuthService {
     // Notify the rest of the application that the user is no longer logged in
     this._userManager.events.addAccessTokenExpired(_ => {
       this._loginChangedSubject.next(false);
+    });
+    this._userManager.events.addUserLoaded(user => {
+      if (this._user !== user) {
+        this._user = user;  // Update internal state to reflect new user data
+        this.loadSecurityContext(); // fetch user's security context
+        this._loginChangedSubject.next(!!user && !user.expired);  // Notify subscribers about the change in the user's login state
     });
   }
 
@@ -103,5 +112,19 @@ export class AuthService {
         return null;
       }
     });
+  }
+
+  // fetch the user's security context from the server and store it in the authContext property of the AuthService
+  loadSecurityContext() {
+    this._httpClient
+      .get<AuthContext>(`${Constants.apiRoot}Projects/AuthContext`)
+      .subscribe(
+        context => {
+          this.authContext = new AuthContext();
+          this.authContext.claims = context.claims;
+          this.authContext.userProfile = context.userProfile;
+        },
+        error => console.error(error)
+      );
   }
 }
